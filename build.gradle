@@ -65,7 +65,7 @@ pluginBundle {
 
     plugins {
         j2objcPlugin {
-            id = 'com.github.j2objccontrib.j2objcgradle'
+            id = 'im.getsocial.j2objccontrib.j2objcgradle'
             displayName = 'J2ObjC Gradle Plugin'
         }
     }
