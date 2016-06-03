@@ -226,6 +226,7 @@ class J2objcPlugin implements Plugin<Project> {
                 srcGenMainDir = j2objcSrcGenMainDir
                 srcGenTestDir = j2objcSrcGenTestDir
             }
+/*
             // Assemble podspec and update Xcode
             tasks.create(name: 'j2objcPodspec', type: PodspecTask,
                     dependsOn: ['j2objcPreBuild']) {
@@ -239,10 +240,11 @@ class J2objcPlugin implements Plugin<Project> {
                 group 'build'
                 description 'Depends on j2objc translation, create a Pod file link it to Xcode project'
             }
+*/
             // Assemble libaries
             tasks.create(name: 'j2objcAssembleDebug', type: AssembleLibrariesTask,
                     dependsOn: ['j2objcPackLibrariesDebug', 'j2objcAssembleSource',
-                                'j2objcAssembleResources', 'j2objcXcode']) {
+                                'j2objcAssembleResources']) {
                 group 'build'
                 description 'Copies final generated source and debug libraries to assembly directories'
                 buildType = 'Debug'
@@ -251,7 +253,7 @@ class J2objcPlugin implements Plugin<Project> {
             }
             tasks.create(name: 'j2objcAssembleRelease', type: AssembleLibrariesTask,
                     dependsOn: ['j2objcPackLibrariesRelease', 'j2objcAssembleSource',
-                                'j2objcAssembleResources', 'j2objcXcode']) {
+                                'j2objcAssembleResources']) {
                 group 'build'
                 description 'Copies final generated source and release libraries to assembly directories'
                 buildType = 'Release'
