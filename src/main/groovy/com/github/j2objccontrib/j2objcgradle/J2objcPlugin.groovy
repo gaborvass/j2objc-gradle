@@ -242,7 +242,7 @@ class J2objcPlugin implements Plugin<Project> {
             // Assemble libaries
             tasks.create(name: 'j2objcAssembleDebug', type: AssembleLibrariesTask,
                     dependsOn: ['j2objcPackLibrariesDebug', 'j2objcAssembleSource',
-                                'j2objcAssembleResources','j2obcjXcode']) {
+                                'j2objcAssembleResources','j2objcXcode']) {
                 group 'build'
                 description 'Copies final generated source and debug libraries to assembly directories'
                 buildType = 'Debug'
